@@ -12,8 +12,8 @@ const (
 )
 
 const (
-	AWSCredentialAccessKeyKey = "access_key"
-	AWSCredentialSecretKeyKey = "secret_key"
+	AWSAccess_Key = "access_key"
+	AWSSecret_Key = "secret_key"
 )
 
 func CredentialsFromEnv() map[string][]byte {
@@ -25,7 +25,7 @@ func CredentialsFromEnv() map[string][]byte {
 	}
 
 	return map[string][]byte{
-		AWSCredentialAccessKeyKey: []byte(awsAccessKeyId),
-		AWSCredentialSecretKeyKey: []byte(awsSecretAccessKey),
+		AWSAccess_Key: []byte(awsAccessKeyId),
+		AWSSecret_Key: []byte(awsSecretAccessKey),
 	}
 }

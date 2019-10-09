@@ -6,8 +6,12 @@ import (
 )
 
 const (
-	AZURE_ACCOUNT_NAME = "AZURE_ACCOUNT_NAME"
-	AZURE_ACCOUNT_KEY  = "AZURE_ACCOUNT_KEY"
+	AZURE_SUBSCRIPTION_ID = "AZURE_SUBSCRIPTION_ID"
+	AZURE_TENANT_ID       = "AZURE_TENANT_ID"
+	AZURE_CLIENT_ID       = "AZURE_CLIENT_ID"
+	AZURE_CLIENT_SECRET   = "AZURE_CLIENT_SECRET"
+	AZURE_ACCOUNT_NAME    = "AZURE_ACCOUNT_NAME"
+	AZURE_ACCOUNT_KEY     = "AZURE_ACCOUNT_KEY"
 )
 
 const (
@@ -18,10 +22,10 @@ const (
 )
 
 func CredentialsFromEnv() map[string][]byte {
-	subscriptionID := os.Getenv("AZURE_SUBSCRIPTION_ID")
-	tenantID := os.Getenv("AZURE_TENANT_ID")
-	clientID := os.Getenv("AZURE_CLIENT_ID")
-	clientSecret := os.Getenv("AZURE_CLIENT_SECRET")
+	subscriptionID := os.Getenv(AZURE_SUBSCRIPTION_ID)
+	tenantID := os.Getenv(AZURE_TENANT_ID)
+	clientID := os.Getenv(AZURE_CLIENT_ID)
+	clientSecret := os.Getenv(AZURE_CLIENT_SECRET)
 	if len(subscriptionID) == 0 || len(tenantID) == 0 || len(clientID) == 0 || len(clientSecret) == 0 {
 		log.Println("Azure credentials for empty")
 		return map[string][]byte{}
